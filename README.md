@@ -16,16 +16,16 @@ During **SIH 2025**, the goal was to convert raw Ayurvedic term definitions into
 
 1.  **Data Ingestion:** Raw CSVs containing NAMASTE terms are parsed and transformed into **FHIR CodeSystems** and **ValueSets**.
 2.  **Semantic Mapping Engine:**
-    * Generates text embeddings for term definitions using an **Ensemble Model (SapBERT + MPNet)**[cite: 2].
+    * Generates text embeddings for term definitions using an **Ensemble Model (SapBERT + MPNet)**.
     * Queries the **WHO ICD-11 API** to fetch candidate destination entities.
     * Calculates **Cosine Similarity** between embeddings to rank the top 5 suggestions.
 3.  **Human-in-the-loop Validation:** A **Propose-and-Promote** workflow allows reviewers to validate and promote AI-generated mappings to curated status.
 4.  **Interoperability:** Final mappings are served as **FHIR ConceptMaps**, enabling integration with modern Electronic Health Records (EHRs).
 
 ## Key Components
-* `ingest_ayu.py`: Handles the FHIR resource creation and MongoDB upserts[cite: 1].
-* `semantic_mapper.py` (NLP logic): Implements the semantic search and embedding fusion[cite: 2].
-* `main.py`: Provides the API endpoints for translation, lookups, and the proposal lifecycle[cite: 5].
+* `ingest_ayu.py`: Handles the FHIR resource creation and MongoDB upserts.
+* `semantic_mapper.py` (NLP logic): Implements the semantic search and embedding fusion.
+* `main.py`: Provides the API endpoints for translation, lookups, and the proposal lifecycle.
 
 ## Getting Started
 1. Clone the repo.
