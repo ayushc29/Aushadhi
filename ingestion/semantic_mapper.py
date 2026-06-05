@@ -64,8 +64,8 @@ MAX_SUGGESTIONS = 5
 
 SAPBERT_MODEL = os.getenv("SAPBERT_MODEL", "UMCU/SapBERT-from-PubMedBERT-fulltext_bf16")
 MPNET_MODEL = os.getenv("MPNET_MODEL", "sentence-transformers/all-mpnet-base-v2")
-W_SAP = float(os.getenv("SAPBERT_WEIGHT", "0.5"))
-W_MP = float(os.getenv("MPNET_WEIGHT", "0.5"))
+W_SAP = float(os.getenv("SAPBERT_WEIGHT", "0.65"))
+W_MP = float(os.getenv("MPNET_WEIGHT", "0.35"))
 W_SUM = max(W_SAP + W_MP, 1e-9)
 
 model_sap = SentenceTransformer(SAPBERT_MODEL)
